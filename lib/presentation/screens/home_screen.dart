@@ -104,8 +104,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       return current is NextCategories && isNotEmpty;
                     },
                     builder: (context, state){
-                      final list = (state as NextCategories).category.childs;
-                      return CatalogPage(title: listChild[index].name, list: list,);
+                      if(state is NextCategories){
+                        final category  = state.category;
+                        return CatalogPage(title: category.name, list: category.childs,);
+                      }
+                      return CircularProgressIndicator();
                     },
                   );
                 },

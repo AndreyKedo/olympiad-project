@@ -51,7 +51,8 @@ class GeneralBlocBloc extends Bloc<GeneralBlocEvent, GeneralBlocState> {
     if(event is InitEvent){
       final response = await api.getCategories();
       yield InitializationState(category: response);
-      yield NextCategories(category: response);
+      final subCategory = await api.getCategories(response.childs.first.id);
+      yield NextCategories(category: subCategory);
 
       final prices = await api.getPriceRange();
       final instance = await SharedPreferences.getInstance();
@@ -74,7 +75,6 @@ class GeneralBlocBloc extends Bloc<GeneralBlocEvent, GeneralBlocState> {
   @override
   void onError(Object error, StackTrace stacktrace) {
     add(ErrorEvent(error: error));
-    print(stacktrace);
     super.onError(error, stacktrace);
   }
 }
