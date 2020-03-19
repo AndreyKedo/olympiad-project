@@ -1,16 +1,39 @@
-# getoutfitbrowser
+# Catalog #
 
-Project for olympiad
+Прототип приложения интернет-магазин, релизующий заимодействие с [REST API](https://github.com/dbystruev/Get-Outﬁt-Server).
 
-## Getting Started
+## Описание функционала
 
-This project is a starting point for a Flutter application.
+В приложение реализованн следующий функционал:
 
-A few resources to get you started if this is your first Flutter project:
+- Навигация по категориям
+- Просмотр предлагаемого товара
+- Переход на исходную страницу товара
+- Просмотр картинок
+- Поиск по параметрам (цена, учет скидки)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Дизайн
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Главный экран
+
+Содержит в себе навигацию по каталогам и кнопку для перехода на экран поиска.
+
+![](/doc/image/main.png)
+
+### Поиск и парметры поиска
+
+Содержит в себе поле для ввода запроса, параметры поиска и результат поиска.
+Имеется возможность просмотра товара через WebView, для этого следует нажать на элемент списка.
+Что бы увеличить изображение элемента списка, нужно нажать на значек лупы.
+
+![](/doc/image/search.png)
+![](/doc/image/option_search.png)
+
+###Предложенные товары
+
+Экран отображает список предложенного товара и содержит основную информацию о каждом элементе.
+Для навигации по товарам используйте жест свайпа влево или вправо.
+Есть возможность просмотра отмасштабированной версии картинки, для этого нажмите на нужную картинку товара.
+Что бы перейти к источнику нажмите кнопку "Купить".
+
+![](/doc/image/offers.png)
